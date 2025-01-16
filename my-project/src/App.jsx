@@ -1,35 +1,44 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react';
+import { Route, Routes, BrowserRouter as Router } from 'react-router-dom';
+import Navbar from './components/Navbar'
+import Footer from './Components/Footer'
+import About from './Pages/About'
+import Hire from './Pages/Hire'
+import SkillsSection from './components/SkillSection'
+import TechnicalSkills from './components/TechnicalSkills'
+import Middle from './components/Middle'
 
-function App() {
-  const [count, setCount] = useState(0)
+import EducationCareer from './Components/EducationCareer';
 
+
+
+const App = () => {
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <Router>
+      {/* Navbar will always Displayed */}
+      <Navbar/>
+      
+      
+      
+     
 
-export default App
+      {/* Routes for changing dynamic content */}
+      <Routes>
+        
+        <Route exact path="/hire"element={<Hire />} />
+        <Route exact path="/about"element={<About/>} />
+        <Route exact path="/projects"element={<WorkPage/>} />
+        
+        <Route exact path="/"element={<><Middle/><About/><TechnicalSkills/><SkillsSection/><EducationCareer/></>} />
+
+        
+        
+      </Routes>
+      <Footer />
+      {/* Footer is always displayed */}
+    
+    </Router>
+  );
+};
+
+export default App;
