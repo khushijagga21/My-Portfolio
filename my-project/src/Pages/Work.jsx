@@ -18,13 +18,13 @@ const ProjectCard = ({ imageSrc, title, description, link }) => {
 const App = () => {
   const [projects] = useState([
     {
-      imageSrc:'',
+      imageSrc:'./Amazon.jpg',
       title: 'Amazon Clone',
       description: 'A User-Interface of Amazon-Clone featuring product listing for a Seamless shopping Experience a responsive design for an enhanced user experience.',
       link: 'https://papaya-custard-948f12.netlify.app/',
     },
     {
-      imageSrc: 'project2.jpg',
+      imageSrc: './TicTacToe.jpg',
       title: 'Tic-Tac-Toe',
       description: 'Built a dynamic Tic-Tac-Toe game with an interactive user interface, implementing two-player mode and logic for detecting game outcomes such as win, lose, or draw',
       link: 'https://gleeful-kringle-d6d635.netlify.app/',
@@ -33,16 +33,16 @@ const App = () => {
 
 
     {
-        imageSrc: 'project2.jpg',
+        imageSrc: '/KJ.jpg',
         title: 'KJ Educates',
         description: ' KJ Educates, an offline tutoring service  system that provides detailed information about tutoring services, schedules, and offerings to enhance accessibility and organization',
         link: 'https://kjeducates-bbb7e9.netlify.app/',
       },
 
       {
-        imageSrc: 'project2.jpg',
+        imageSrc: './HP.jpg',
         title: 'Project 2',
-        description: 'Description for Project 2',
+        description: 'A website aimed at empowering farmers in rural areas. The platform allowed farmers to place fuel orders, connect with other farming communities in neighboring villages, and included a backend management system for handling orders efficiently.',
         link: 'https://project2.com',
       },
     // Add more project objects here

@@ -1,24 +1,24 @@
-import React ,{useState}from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function Middle() {
-  const navigate=useNavigate();
-  const start=()=>{
-navigate("/hire")
-  }
+  const navigate = useNavigate();
+  const start = () => {
+    navigate("/hire");
+  };
+
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-900 text-white mt-20">
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:max-w-5xl">
         {/* Main Box */}
         <div className="relative col-span-2 lg:col-span-1 bg-black rounded-lg shadow-lg p-6 flex flex-col items-center">
           <img
-            src="https://th.bing.com/th/id/OIP.imjNrQB0ZHAAr-tsxxADegHaEa?w=318&h=189&c=7&r=0&o=5&dpr=1.3&pid=1.7" // Replace with your image link
+            src="https://th.bing.com/th/id/OIP.imjNrQB0ZHAAr-tsxxADegHaEa?w=318&h=189&c=7&r=0&o=5&dpr=1.3&pid=1.7"
             alt="Developer Illustration"
-            
           />
           <h2 className="text-4xl font-bold mt-4">Khushi Jagga</h2>
-          <p className="text-gray-400  text-xl mt-2 text-center">
-           A Open-Source Contributor and MERN STACK Developer
+          <p className="text-gray-400 text-xl mt-2 text-center">
+            An Open-Source Contributor and MERN STACK Developer
           </p>
           <div className="flex space-x-4 mt-4">
             <a
@@ -55,7 +55,10 @@ navigate("/hire")
         {/* Work Together Box */}
         <div className="relative bg-black rounded-lg shadow-lg p-6 flex flex-col items-center">
           <h3 className="text-xl font-semibold mb-2">Wanna work together?</h3>
-          <button onClick={start}className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-lg transition mb-6">
+          <button
+            onClick={start}
+            className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-lg transition mb-6"
+          >
             Let's Start
           </button>
           {/* Separate Buttons for GitHub, LinkedIn, Mail, and Call */}
@@ -91,17 +94,36 @@ navigate("/hire")
           </div>
         </div>
 
-        {/* Additional Boxes */}
-        <div className="relative bg-black rounded-lg shadow-lg p-6 w-400">
-          <h3 className="text-lg font-medium mb-2">Performance</h3>
-          <p className="text-gray-400">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit maiores
-            impedit.
-          </p>
-          <img src="https://saurabh-dhyani.vercel.app/title.svg"></img>
+        {/* Skills Section */}
+        <div className="relative bg-black rounded-lg shadow-lg p-6">
+          <center><h3 className="text-lg font-medium mb-4">Skills</h3></center>
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3">
+            {/* Skill Cards */}
+            {[
+              { name: "HTML", color: "text-red-500", icon: "fab fa-html5" },
+              { name: "CSS", color: "text-blue-500", icon: "fab fa-css3-alt" },
+              { name: "JavaScript", color: "text-yellow-500", icon: "fab fa-js-square" },
+              { name: "React", color: "text-cyan-500", icon: "fab fa-react" },
+              { name: "Bootstrap", color: "text-green-500", icon: "fab fa-node" },
+              { name: "Github", color: "text-green-400", icon: "fas fa-database" },
+              { name: "Git", color: "text-green-400", icon: "fas fa-database" },
+              { name: "Docker", color: "text-green-400", icon: "fas fa-database" },
+              { name: "Wordpress", color: "text-green-400", icon: "fas fa-database" },
+              { name: "Tailwind ", color: "text-green-400", icon: "fas fa-database" },
+              { name: "C", color: "text-green-400", icon: "fas fa-database" },
+              { name: "MongoDB", color: "text-green-400", icon: "fas fa-database" },
+              
+            ].map((skill, index) => (
+              <div
+                key={index}
+                className="bg-gray-800 hover:bg-gray-700 text-white py-4 px-6 rounded-lg flex flex-col items-center transition transform hover:scale-105"
+              >
+                <i className={`${skill.icon} ${skill.color} text-3xl mb-2`}></i>
+                <p className="text-sm font-semibold">{skill.name}</p>
+              </div>
+            ))}
+          </div>
         </div>
-        
-       
       </div>
     </div>
   );
