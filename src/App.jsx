@@ -8,7 +8,7 @@ import SkillsSection from './components/SkillSection'
 import TechnicalSkills from './components/TechnicalSkills'
 import Middle from './components/Middle'
 import WorkPage from './Pages/Work';
-import EducationCareer from './Components/EducationCareer';
+import EducationCareer from './components/EducationCareer'
 
 
 
